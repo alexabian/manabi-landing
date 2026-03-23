@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>まなびのへや · Learning Room</title>
+  <title>Asobu · Learning Room</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Serif+Display&family=Noto+Sans+JP:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700&family=DM+Serif+Display&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -18,7 +18,7 @@
       --border:   #E4DDD4;
 
       --gengoji:  #6B6FA8;
-      --waku:     #6BAF6B;
+      --waku:     #5BA85B;
       --pyon:     #C07DB8;
       --reef:     #2A9D8F;
     }
@@ -31,7 +31,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 3rem 1.25rem 4rem;
+      padding: 3.5rem 1.25rem 4rem;
     }
 
     /* ── Header ── */
@@ -43,121 +43,108 @@
     .badge {
       display: inline-block;
       font-family: 'Noto Sans JP', sans-serif;
-      font-size: 0.75rem;
-      letter-spacing: 0.12em;
+      font-size: 0.8rem;
+      letter-spacing: 0.14em;
       color: var(--muted);
       background: var(--border);
-      padding: 0.25rem 0.75rem;
+      padding: 0.3rem 0.9rem;
       border-radius: 99px;
-      margin-bottom: 1rem;
+      margin-bottom: 1.1rem;
     }
 
     header h1 {
       font-family: 'DM Serif Display', serif;
-      font-size: clamp(2rem, 5vw, 3rem);
-      line-height: 1.15;
-      letter-spacing: -0.01em;
+      font-size: clamp(2.8rem, 8vw, 4.5rem);
+      line-height: 1.05;
+      letter-spacing: -0.02em;
       color: var(--text);
     }
 
-    header h1 span {
-      font-family: 'Noto Sans JP', sans-serif;
-      font-size: 0.9em;
+    header h1 .sub {
+      font-family: 'DM Sans', sans-serif;
+      font-size: clamp(1rem, 3vw, 1.25rem);
+      font-weight: 600;
       display: block;
       color: var(--muted);
-      font-weight: 400;
-      margin-top: 0.25rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-top: 0.5rem;
     }
 
     header p {
-      margin-top: 0.75rem;
+      margin-top: 1rem;
       color: var(--muted);
-      font-size: 0.95rem;
-      max-width: 34ch;
+      font-size: clamp(1rem, 2.5vw, 1.15rem);
+      font-weight: 400;
+      max-width: 28ch;
       margin-inline: auto;
-      line-height: 1.6;
+      line-height: 1.55;
     }
 
-    /* ── Grid ── */
+    /* ── Grid — always 2 columns ── */
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.25rem;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
       width: 100%;
-      max-width: 880px;
+      max-width: 720px;
     }
 
     /* ── Card ── */
     .card {
       background: var(--bg-card);
-      border: 1.5px solid var(--border);
-      border-radius: 18px;
-      padding: 1.75rem 1.5rem 1.5rem;
+      border: 2px solid var(--border);
+      border-radius: 22px;
+      padding: 1.75rem 1.4rem 1.5rem;
       display: flex;
       flex-direction: column;
-      gap: 0.85rem;
+      align-items: flex-start;
+      gap: 0.6rem;
       text-decoration: none;
       color: inherit;
       transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
     }
 
     .card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 8px 28px rgba(0,0,0,0.07);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.08);
       border-color: var(--accent);
     }
 
-    .card-icon {
-      width: 52px;
-      height: 52px;
-      border-radius: 14px;
-      background: color-mix(in srgb, var(--accent) 12%, transparent);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.6rem;
-    }
-
-    .card-label {
-      font-family: 'Noto Sans JP', sans-serif;
-      font-size: 0.7rem;
-      font-weight: 500;
-      letter-spacing: 0.1em;
-      color: var(--accent);
-      text-transform: uppercase;
+    .card-emoji {
+      font-size: 3rem;
+      line-height: 1;
+      margin-bottom: 0.2rem;
     }
 
     .card-title {
       font-family: 'DM Serif Display', serif;
-      font-size: 1.45rem;
-      line-height: 1.2;
+      font-size: clamp(1.3rem, 3.5vw, 1.7rem);
+      line-height: 1.1;
       color: var(--text);
     }
 
     .card-desc {
-      font-size: 0.875rem;
+      font-size: clamp(0.8rem, 2vw, 0.9rem);
       color: var(--muted);
-      line-height: 1.65;
-      flex: 1;
+      line-height: 1.5;
+      font-weight: 400;
     }
 
     .card-cta {
       display: inline-flex;
       align-items: center;
-      gap: 0.35rem;
+      gap: 0.3rem;
       font-size: 0.85rem;
-      font-weight: 600;
+      font-weight: 700;
       color: var(--accent);
-      margin-top: 0.25rem;
+      margin-top: auto;
+      padding-top: 0.5rem;
+      letter-spacing: 0.03em;
     }
 
-    .card-cta svg {
-      transition: transform 0.18s ease;
-    }
-
-    .card:hover .card-cta svg {
-      transform: translateX(3px);
-    }
+    .card-cta svg { transition: transform 0.18s ease; }
+    .card:hover .card-cta svg { transform: translateX(4px); }
 
     /* ── Accent per card ── */
     .card--gengoji { --accent: var(--gengoji); }
@@ -167,95 +154,88 @@
 
     /* ── Footer ── */
     footer {
-      margin-top: 3.5rem;
-      font-size: 0.78rem;
+      margin-top: 3rem;
+      font-size: 0.82rem;
       color: var(--muted);
       text-align: center;
+      line-height: 1.8;
     }
 
-    footer span {
+    footer .jp {
       font-family: 'Noto Sans JP', sans-serif;
     }
 
+    /* ── Mobile: smaller cards but still 2-col ── */
     @media (max-width: 480px) {
-      body { padding-top: 2rem; }
+      body { padding: 2.5rem 1rem 3rem; }
       header { margin-bottom: 2rem; }
+      .grid { gap: 0.75rem; }
+      .card { padding: 1.25rem 1rem 1.1rem; border-radius: 18px; }
+      .card-emoji { font-size: 2.2rem; }
     }
   </style>
 </head>
 <body>
 
   <header>
-    <div class="badge"><span>まなびのへや</span></div>
+    <div class="badge"><span class="jp">あそぶ</span> · asobu</div>
     <h1>
       Learning Room
-      <span>by Alex &amp; family</span>
+      <span class="sub">by Alex &amp; family</span>
     </h1>
-    <p>Four little apps for Lidia and Nerea — words, worlds, numbers, and phonics.</p>
+    <p>Four apps for Lidia &amp; Nerea. Pick one and play! 🎉</p>
   </header>
 
   <div class="grid">
 
     <!-- Gengoji Play -->
     <a class="card card--gengoji" href="https://gengoji-play.vercel.app/" target="_blank" rel="noopener">
-      <div class="card-icon">🃏</div>
-      <div>
-        <div class="card-label">言葉 · Words</div>
-        <div class="card-title">Gengoji Play</div>
-      </div>
-      <p class="card-desc">Montessori flashcards in English, Spanish &amp; Japanese. Swipe through letters and kana at your own pace.</p>
+      <div class="card-emoji">🃏</div>
+      <div class="card-title">Gengoji Play</div>
+      <p class="card-desc">Flashcards in English, Spanish &amp; Japanese.</p>
       <div class="card-cta">
-        Open
+        Play
         <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-          <path d="M2.5 7h9M7.5 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M2.5 7h9M7.5 3l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </div>
     </a>
 
     <!-- WakuWaku Discover -->
     <a class="card card--waku" href="https://wakuwaku-discover.vercel.app/" target="_blank" rel="noopener">
-      <div class="card-icon">🔬</div>
-      <div>
-        <div class="card-label">ワクワク · Discover</div>
-        <div class="card-title">WakuWaku Discover</div>
-      </div>
-      <p class="card-desc">Explore worlds of Science, Geography, History &amp; Art through fun quiz questions. ワクワク — get excited!</p>
+      <div class="card-emoji">🔬</div>
+      <div class="card-title">WakuWaku Discover</div>
+      <p class="card-desc">Science, Geography, History &amp; Art quizzes.</p>
       <div class="card-cta">
-        Open
+        Discover
         <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-          <path d="M2.5 7h9M7.5 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M2.5 7h9M7.5 3l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </div>
     </a>
 
     <!-- PyonPyon Numbers -->
     <a class="card card--pyon" href="https://pyonpyon-numbers.vercel.app/" target="_blank" rel="noopener">
-      <div class="card-icon">🔢</div>
-      <div>
-        <div class="card-label">ぴょんぴょん · Numbers</div>
-        <div class="card-title">PyonPyon Numbers</div>
-      </div>
-      <p class="card-desc">Count, add, and discover shapes — maths practice that hops along for both Lidia and Nerea.</p>
+      <div class="card-emoji">🔢</div>
+      <div class="card-title">PyonPyon Numbers</div>
+      <p class="card-desc">Count, add &amp; discover shapes. Hop along!</p>
       <div class="card-cta">
-        Open
+        Count
         <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-          <path d="M2.5 7h9M7.5 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M2.5 7h9M7.5 3l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </div>
     </a>
 
     <!-- Phonics Reef -->
     <a class="card card--reef" href="https://phonics-reef.vercel.app/" target="_blank" rel="noopener">
-      <div class="card-icon">🐠</div>
-      <div>
-        <div class="card-label">おんせい · Phonics</div>
-        <div class="card-title">Phonics Reef</div>
-      </div>
-      <p class="card-desc">Deep-dive phonics trainer with GPC levels, audio &amp; UK Year 1 curriculum. Dive in and decode every sound.</p>
+      <div class="card-emoji">🐠</div>
+      <div class="card-title">Phonics Reef</div>
+      <p class="card-desc">Phonics &amp; sounds. Dive in &amp; decode!</p>
       <div class="card-cta">
-        Open
+        Dive in
         <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-          <path d="M2.5 7h9M7.5 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M2.5 7h9M7.5 3l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </div>
     </a>
@@ -263,7 +243,8 @@
   </div>
 
   <footer>
-    Made with ♡ between <span>東京</span> &amp; Dubai &nbsp;·&nbsp; <span>家族のために</span>
+    Made with ♡ between <span class="jp">東京</span> &amp; Dubai
+    <br><span class="jp">家族のために</span>
   </footer>
 
 </body>
