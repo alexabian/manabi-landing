@@ -3,18 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Asobu · Learning Room</title>
-  <meta name="description" content="A cozy family landing page for four kid-friendly learning apps: flashcards, discovery quizzes, number games, and phonics practice." />
+  <title>Manabu · Learning Room</title>
+  <meta name="description" content="A cozy family landing page for five kid-friendly learning apps: flashcards, discovery quizzes, number games, phonics practice, and typing adventures." />
   <link rel="canonical" href="https://manabi-landing.vercel.app/" />
   <meta name="theme-color" content="#F7F3EE" />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Asobu · Learning Room" />
-  <meta property="og:description" content="A cozy family landing page for four kid-friendly learning apps: flashcards, discovery quizzes, number games, and phonics practice." />
+  <meta property="og:title" content="Manabu · Learning Room" />
+  <meta property="og:description" content="A cozy family landing page for five kid-friendly learning apps: flashcards, discovery quizzes, number games, phonics practice, and typing adventures." />
   <meta property="og:url" content="https://manabi-landing.vercel.app/" />
-  <meta property="og:site_name" content="Asobu" />
+  <meta property="og:site_name" content="Manabu" />
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Asobu · Learning Room" />
-  <meta name="twitter:description" content="A cozy family landing page for four kid-friendly learning apps: flashcards, discovery quizzes, number games, and phonics practice." />
+  <meta name="twitter:title" content="Manabu · Learning Room" />
+  <meta name="twitter:description" content="A cozy family landing page for five kid-friendly learning apps: flashcards, discovery quizzes, number games, phonics practice, and typing adventures." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <style>@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,900&family=DM+Sans:wght@400;500;700&family=Noto+Sans+JP:wght@400;700&display=swap');</style>
@@ -32,6 +32,7 @@
       --waku:     #5BA85B;
       --pyon:     #C07DB8;
       --reef:     #2A9D8F;
+      --typetown: #D98C3F;
     }
 
     body {
@@ -87,7 +88,7 @@
       color: var(--muted);
       font-size: clamp(1rem, 2.5vw, 1.15rem);
       font-weight: 400;
-      max-width: 28ch;
+      max-width: 34ch;
       margin-inline: auto;
       line-height: 1.55;
     }
@@ -169,6 +170,7 @@
     .card--waku    { --accent: var(--waku); }
     .card--pyon    { --accent: var(--pyon); }
     .card--reef    { --accent: var(--reef); }
+    .card--typetown { --accent: var(--typetown); }
 
     /* ── Footer ── */
     footer {
@@ -196,12 +198,12 @@
 <body>
 
   <header>
-    <div class="badge"><span class="jp">あそぶ</span> · asobu</div>
+    <div class="badge"><span class="jp">まなぶ</span> · manabu</div>
     <h1>
       Learning Room
       <span class="sub">by Alex &amp; family</span>
     </h1>
-    <p>Four apps for Lidia &amp; Nerea. Pick one and play! 🎉</p>
+    <p>Five learning apps for Lidia &amp; Nerea. Pick one and play, practice, or discover something new! 🎉</p>
   </header>
 
   <div class="grid">
@@ -223,7 +225,7 @@
     <a class="card card--waku" href="https://wakuwaku-discover.vercel.app/" target="_blank" rel="noopener">
       <div class="card-emoji">🔬</div>
       <div class="card-title">WakuWaku Discover</div>
-      <p class="card-desc">Science, Geography, History &amp; Art quizzes.</p>
+      <p class="card-desc">Science, geography, history &amp; art quizzes.</p>
       <div class="card-cta">
         Discover
         <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
@@ -252,6 +254,19 @@
       <p class="card-desc">Phonics &amp; sounds. Dive in &amp; decode!</p>
       <div class="card-cta">
         Dive in
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+          <path d="M2.5 7h9M7.5 3l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+    </a>
+
+    <!-- TypeTown -->
+    <a class="card card--typetown" href="https://typetown.vercel.app/" target="_blank" rel="noopener">
+      <div class="card-emoji">⌨️</div>
+      <div class="card-title">TypeTown</div>
+      <p class="card-desc">Typing practice, quests &amp; tiny rewards in a playful town.</p>
+      <div class="card-cta">
+        Type
         <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
           <path d="M2.5 7h9M7.5 3l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
